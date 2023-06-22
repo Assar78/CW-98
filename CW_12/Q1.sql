@@ -31,3 +31,6 @@ FROM customer
 JOIN rental ON customer.customer_id = rental.customer_id
 JOIN inventory ON inventory.inventory_id = rental.inventory_id
 JOIN film ON film.film_id = inventory.film_id;
+
+SELECT title, length from film
+WHERE length > (SELECT AVG(length) from film);
