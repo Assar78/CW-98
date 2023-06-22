@@ -20,4 +20,7 @@ JOIN category on film_category.category_id = category.category_id
 GROUP BY category.name
 HAVING COUNT(*) BETWEEN 60 AND 68;
 
- 
+SELECT title, category.name as language FROM film
+JOIN film_category ON film.film_id = film_category.film_id
+JOIN category on film_category.category_id = category.category_id
+JOIN language ON language.language_id = file.language_id;
