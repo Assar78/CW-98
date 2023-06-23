@@ -34,3 +34,10 @@ JOIN film ON film.film_id = inventory.film_id;
 
 SELECT title, length from film
 WHERE length > (SELECT AVG(length) from film);
+
+SELECT title, film.film_id , rental.return_date
+FROM film
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30';
+
